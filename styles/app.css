@@ -1,13 +1,26 @@
 @import"normalize.css";
 @import "gridsystem.css";
-@import "fonts.css";
+@import "font.css";
+
 /* ROOT */
 :root {
     --textcolor:#333333;
     --shadowcolor:rgba(19,182,255,0.24);
     --app-bg-color:#fff;
     --section-bg-color:#fff;
+    --priamry-color:#09BEAD;
 }
+
+/* RESET STYLES */
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
 /* APP */
 html{
     font-size: 10px;
@@ -16,4 +29,105 @@ body{
     font-family: "Poppins";
     font-size: 16px;
     line-height: 1.5;
+}
+
+/* HEADER */
+.header{
+    /* COSTUMIES SHADOW COLOR */
+    /* --shadowcolor:rgba(4,195,255,.16); */
+    background-color: var(--section-bg-color);
+    box-shadow: 0 .5rem 4rem rgba(4, 195, 255, .16);
+    z-index: 100;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+.nav__logo{
+    color: var(--priamry-color);
+    font-family:"Black";
+    font-size: 6rem;
+    margin: 0;
+}
+.menu{
+    display: flex;
+
+    /* align-items: center; */
+}
+.menu__item{
+    margin-left: 3rem;
+}
+.menu__item:first-child{
+    margin-left: 0;
+}
+.menu__link{
+    display:inline-block;
+    color: var(--textcolor);
+    font-family: "Medium";
+}
+.menu__link:hover{
+    color: var(--priamry-color);
+    transition: color 200ms ease-in;
+}
+.menu__link--active{
+    color:var(--priamry-color);
+}
+.nav__toggle-icon{
+    display: none;
+    width: 5rem;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.nav__toggle-line{
+    position: relative;
+}
+.nav__toggle-line,
+.nav__toggle-line::after,
+.nav__toggle-line::before{
+    content: ' ';
+    background-color: var(--priamry-color);
+    width: 4.5rem;
+    height: .5rem;
+    border-radius: 2rem;
+    transition: all 200ms ease-in;
+}
+.nav__toggle-line::after{
+    top:1.2rem;
+    position: absolute;
+
+}
+.nav__toggle-line::before{
+    bottom: 1.2rem;
+    position: absolute;
+}
+.nav__toggle-icon--open .nav__toggle-line{
+    background-color: transparent;
+}
+.nav__toggle-icon--open .nav__toggle-line::after{
+    transform:translateY(-1.2rem) rotate(-45deg);
+}
+.nav__toggle-icon--open .nav__toggle-line::before{
+    transform:translateY(1.2rem) rotate(45deg);
+}
+.cover{
+    width: 100%;
+    top: 0;
+    right: 0;
+    height:100%;
+    position: fixed;
+    background-color: rgb(0,0,0,.15);
+    z-index: -1;
+    opacity: 0;
+    transition: all 200ms ease-in;
+}
+.cover--show{
+    z-index: 99;
+    opacity: 1;
 }

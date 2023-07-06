@@ -1,0 +1,44 @@
+@media screen and (max-width: 1200px){
+
+}
+@media screen and (max-width: 992px){
+    .nav__logo{
+        font-size: 4rem;
+    }
+    .menu__item{
+        margin-left:2rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .menu{
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        right: 0;
+        left: 0;
+        top: 100%;
+        background-color: var(--app-bg-color);
+        height: 0;
+        overflow: hidden;
+        transition: all 240ms ease-in;
+    }
+    .menu--open{
+        height:33rem;
+    }    
+    .menu__item{
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .menu__item:first-child{
+        margin-top: 2rem;
+    }
+    .nav__toggle-icon{
+        display: flex;
+    }
+}
+@media screen and (max-width: 576px){
+    
+}

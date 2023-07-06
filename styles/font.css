@@ -7,13 +7,14 @@
 @font-face {
     font-family: "Medium";
     src: url(../fonts/Poppins-Medium.ttf);
+    
 }
 @font-face {
-    font-family: "semibold";
+    font-family: "Semibold";
     src: url(../fonts/Poppins-SemiBold.ttf);
 }
 @font-face {
-    font-family: "bold";
+    font-family: "Bold";
     src: url(../fonts/Poppins-Bold.ttf);
 }
 @font-face {
